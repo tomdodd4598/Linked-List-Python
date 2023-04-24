@@ -2,7 +2,6 @@ from item import *
 
 
 def insert_item(start, val, insert_before):
-    print(f'Creating item: {val}')
     current = start
     previous = None
 
@@ -45,7 +44,7 @@ def remove_all(_start):
     return None
 
 
-def print_list(start):
+def print_loop(start):
     while start is not None:
         start = start.print_get_next()
 
@@ -70,7 +69,7 @@ def print_recursive(start):
 
 
 def print_fold(start):
-    def f_some(current, _next, accumulator):
+    def f_some(current, _, accumulator):
         return f'{accumulator}{current.value}, '
 
     def f_last(current, accumulator):
@@ -83,7 +82,7 @@ def print_fold(start):
 
 
 def print_foldback(start):
-    def f_some(current, _next, inner_val):
+    def f_some(current, _, inner_val):
         return f'{current.value}, {inner_val}'
 
     def f_last(current):

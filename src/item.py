@@ -1,5 +1,6 @@
 class Item:
     def __init__(self, value, next_):
+        print(f'Creating item: {value}')
         self.value = value
         self.next_ = next_
 
@@ -33,8 +34,7 @@ class Item:
         return ItemIterator(self)
 
     def print_get_next(self):
-        print(self.value, end='')
-        print('\n' if self.next_ is None else ', ', end='')
+        print('{}{}'.format(self.value, '\n' if self.next_ is None else ', '), end='')
         return self.next_
 
 

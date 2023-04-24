@@ -3,19 +3,19 @@ from helpers import *
 import re
 
 
-def is_valid_string(str_):
-    return re.search('^(0|-?[1-9][0-9]*|[A-Za-z][0-9A-Z_a-z]*)$', str_)
+def is_valid_string(string):
+    return re.search('^(0|-?[1-9][0-9]*|[A-Za-z][0-9A-Z_a-z]*)$', string)
 
 
-def is_number_string(str_):
-    return re.search('^-?[0-9]+$', str_)
+def is_number_string(string):
+    return re.search('^-?[0-9]+$', string)
 
 
-def insert_before(val, oth):
-    if is_number_string(val) and is_number_string(oth.value):
-        return int(val) <= int(oth.value)
+def insert_before(val, item):
+    if is_number_string(val) and is_number_string(item.value):
+        return int(val) <= int(item.value)
     else:
-        return val <= oth.value
+        return val <= item.value
 
 
 def value_equals(item, val):
@@ -52,8 +52,8 @@ def main():
                     print('\nCould not parse input!')
 
         elif input_ == 'l':
-            print('\nList print...')
-            print_list(start)
+            print('\nLoop print...')
+            print_loop(start)
 
         elif input_ == 'i':
             print('\nIterator print...')
